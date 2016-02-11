@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(abb_irb1200_moveit_ik_plugin)
+project(abb_irb1200_moveit_ikfast_plugin)
 
 find_package(catkin REQUIRED COMPONENTS
   moveit_core

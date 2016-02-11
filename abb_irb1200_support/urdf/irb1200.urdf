@@ -4,6 +4,8 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="abb_irb1200" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Links below are from axis of one link the next link (joint offsets). This is due the stl export with the base of the robot as the origin-->
+  <!-- link list -->
   <link name="base_link">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -25,14 +27,14 @@
   </link>
   <link name="link_1">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="-0 -0 -0.219"/>
       <geometry>
         <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_1.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="-0 -0 -0.219"/>
       <geometry>
         <mesh filename="package://abb_irb1200_support/meshes/irb1200/collision/link_1.stl"/>
       </geometry>
@@ -41,14 +43,14 @@
   </link>
   <link name="link_2">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="                 -0.0                  -0.0                   -0.3991"/>
       <geometry>
         <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_2.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="                 -0.0                  -0.0                   -0.3991"/>
       <geometry>
         <mesh filename="package://abb_irb1200_support/meshes/irb1200/collision/link_2.stl"/>
       </geometry>
@@ -57,14 +59,14 @@
   </link>
   <link name="link_3">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="                 -0.0                  -0.0                  -0.7491"/>
       <geometry>
         <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_3.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="                 -0.0                  -0.0                  -0.7491"/>
       <geometry>
         <mesh filename="package://abb_irb1200_support/meshes/irb1200/collision/link_3.stl"/>
       </geometry>
@@ -73,14 +75,14 @@
   </link>
   <link name="link_4">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="                 -0.1885 -0.0 -0.7911"/>
       <geometry>
         <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_4.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="                 -0.1885 -0.0 -0.7911"/>
       <geometry>
         <mesh filename="package://abb_irb1200_support/meshes/irb1200/collision/link_4.stl"/>
       </geometry>
@@ -89,14 +91,14 @@
   </link>
   <link name="link_5">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="                 -0.344 -0.0 -0.7911"/>
       <geometry>
         <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_5.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="                 -0.344 -0.0 -0.7911"/>
       <geometry>
         <mesh filename="package://abb_irb1200_support/meshes/irb1200/collision/link_5.stl"/>
       </geometry>
@@ -105,14 +107,14 @@
   </link>
   <link name="link_6">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="                 -0.421 -0.0 -0.7911"/>
       <geometry>
         <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_6.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="                 -0.421 -0.0 -0.7911"/>
       <geometry>
         <mesh filename="package://abb_irb1200_support/meshes/irb1200/collision/link_6.stl"/>
       </geometry>
@@ -120,53 +122,57 @@
     </collision>
   </link>
   <link name="tool0"/>
+  <!-- end of link list -->
+  <!-- joint list -->
   <joint name="joint_1" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0.219"/>
     <parent link="base_link"/>
     <child link="link_1"/>
     <axis xyz="0 0 1"/>
-    <limit effort="0" lower="-3.1416" upper="3.1416" velocity="2.618"/>
+    <limit effort="0" lower="-2.96705973" upper="2.96705973" velocity="5.0265"/>
   </joint>
   <joint name="joint_2" type="revolute">
-    <origin rpy="0 0 0" xyz="0.1 0 0.615"/>
+    <origin rpy="0 0 0" xyz="0 0 0.1801"/>
     <parent link="link_1"/>
     <child link="link_2"/>
     <axis xyz="0 1 0"/>
-    <limit effort="0" lower="-1.7453" upper="1.9199" velocity="2.618"/>
+    <limit effort="0" lower="-1.74533" upper="2.35619" velocity="4.18879"/>
   </joint>
   <joint name="joint_3" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 0.705"/>
+    <origin rpy="0 0 0" xyz="0 0 0.35"/>
     <parent link="link_2"/>
     <child link="link_3"/>
     <axis xyz="0 1 0"/>
-    <limit effort="0" lower="-1.0472" upper="1.1345" velocity="2.618"/>
+    <limit effort="0" lower="-3.49066" upper="1.22173" velocity="5.2360"/>
   </joint>
   <joint name="joint_4" type="revolute">
-    <origin rpy="0 0 0" xyz="0.258 0 0.135"/>
+    <origin rpy="0 0 0" xyz="0.1885 0 0.042"/>
     <parent link="link_3"/>
     <child link="link_4"/>
     <axis xyz="1 0 0"/>
-    <limit effort="0" lower="-3.49" upper="3.49" velocity="6.2832"/>
+    <limit effort="0" lower="-4.71239" upper="4.71239" velocity="6.98131"/>
   </joint>
   <joint name="joint_5" type="revolute">
-    <origin rpy="0 0 0" xyz="0.497 0 0"/>
+    <origin rpy="0 0 0" xyz="0.1555 0 0"/>
     <parent link="link_4"/>
     <child link="link_5"/>
     <axis xyz="0 1 0"/>
-    <limit effort="0" lower="-2.0944" upper="2.0944" velocity="6.2832"/>
+    <limit effort="0" lower="-2.26893" upper="2.26893" velocity="7.0686"/>
   </joint>
   <joint name="joint_6" type="revolute">
-    <origin rpy="0 0 0" xyz="0.085 0 0"/>
+    <origin rpy="0 0 0" xyz="0.077 0 0"/>
     <parent link="link_5"/>
     <child link="link_6"/>
     <axis xyz="1 0 0"/>
-    <limit effort="0" lower="-6.9813" upper="6.9813" velocity="7.854"/>
+    <limit effort="0" lower="-6.2832" upper="6.2832" velocity="10.4720"/>
   </joint>
   <joint name="joint_6-tool0" type="fixed">
     <parent link="link_6"/>
     <child link="tool0"/>
     <origin rpy="0 1.57079632679 0" xyz="0 0 0"/>
   </joint>
+  <!-- end of joint list -->
+  <!-- ROS base_link to ABB World Coordinates transform -->
   <link name="base"/>
   <joint name="base_link-base" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0"/>

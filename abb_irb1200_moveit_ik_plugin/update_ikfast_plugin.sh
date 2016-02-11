@@ -1,1 +1,0 @@
-rosrun moveit_ikfast create_ikfast_moveit_plugin.py abb_irb1200 manipulator abb_irb1200_moveit_ik_plugin /home/ubuntu12/catkin_ws/src/abb_irb1200_moveit_ik_plugin/src/abb_irb1200_manipulator_ikfast_solver.cpp
