@@ -135,7 +135,26 @@
             <material name="yellow"/>
         </collision>
     </link>
-    <link name="${prefix}tool0"/>
+    <link name="${prefix}tool0">
+        <visual>
+            <origin xyz="
+                0 0.077 0.068" rpy="0 3.14159 -1.571"/>
+            <!-- <origin xyz=" -->
+                <!-- -${link_6_X+link_5_X+link_4_X+link_3_X+link_2_X+link_1_X} -${link_6_Y+link_5_Y+link_4_Y+link_3_Y+link_2_Y+link_1_Y} -${link_6_Z+link_5_Z+link_4_Z+link_3_Z+link_2_Z+link_1_Z}" rpy="0 0 0"/> -->
+            <geometry>
+                <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/ee.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="abb_orange"/>
+        </visual>
+        <collision>
+            <origin xyz="
+                -${link_6_X+link_5_X+link_4_X+link_3_X+link_2_X+link_1_X} -${link_6_Y+link_5_Y+link_4_Y+link_3_Y+link_2_Y+link_1_Y} -${link_6_Z+link_5_Z+link_4_Z+link_3_Z+link_2_Z+link_1_Z}" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://abb_irb1200_support/meshes/irb1200/collision/ee.stl"  scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="yellow"/>
+        </collision>
+    </link>
     <!-- end of link list -->
 
     <!-- joint list -->
