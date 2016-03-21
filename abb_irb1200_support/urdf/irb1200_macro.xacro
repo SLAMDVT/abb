@@ -40,8 +40,8 @@
     <link name="${prefix}link_2">
         <visual>
             <origin xyz="
-                -${link_2_X+link_1_X} 
-                -${link_2_Y+link_1_Y}  
+                -${link_2_X+link_1_X}
+                -${link_2_Y+link_1_Y}
                 -${link_2_Z+link_1_Z}" rpy="0 0 0"/>
             <geometry>
                 <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_2.stl"/>
@@ -50,8 +50,8 @@
         </visual>
         <collision>
             <origin xyz="
-                -${link_2_X+link_1_X} 
-                -${link_2_Y+link_1_Y}  
+                -${link_2_X+link_1_X}
+                -${link_2_Y+link_1_Y}
                 -${link_2_Z+link_1_Z}" rpy="0 0 0"/>
             <geometry>
                 <mesh filename="package://abb_irb1200_support/meshes/irb1200/collision/link_2.stl"/>
@@ -62,8 +62,8 @@
     <link name="${prefix}link_3">
         <visual>
             <origin xyz="
-                -${link_3_X+link_2_X+link_1_X} 
-                -${link_3_Y+link_2_Y+link_1_Y} 
+                -${link_3_X+link_2_X+link_1_X}
+                -${link_3_Y+link_2_Y+link_1_Y}
                 -${link_3_Z+link_2_Z+link_1_Z}" rpy="0 0 0"/>
             <geometry>
                 <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_3.stl"/>
@@ -72,8 +72,8 @@
         </visual>
         <collision>
             <origin xyz="
-                -${link_3_X+link_2_X+link_1_X} 
-                -${link_3_Y+link_2_Y+link_1_Y} 
+                -${link_3_X+link_2_X+link_1_X}
+                -${link_3_Y+link_2_Y+link_1_Y}
                 -${link_3_Z+link_2_Z+link_1_Z}" rpy="0 0 0"/>
             <geometry>
                 <mesh filename="package://abb_irb1200_support/meshes/irb1200/collision/link_3.stl"/>
@@ -135,14 +135,15 @@
             <material name="yellow"/>
         </collision>
     </link>
-    <link name="${prefix}tool0">
+    <link name="${prefix}tool0"/>
+    <link name="${prefix}extruder">
         <visual>
             <origin xyz="
-                0 0.077 0.068" rpy="0 3.14159 -1.571"/>
+                0 0 .00875" rpy="0 3.14159 -1.571"/>
             <!-- <origin xyz=" -->
                 <!-- -${link_6_X+link_5_X+link_4_X+link_3_X+link_2_X+link_1_X} -${link_6_Y+link_5_Y+link_4_Y+link_3_Y+link_2_Y+link_1_Y} -${link_6_Z+link_5_Z+link_4_Z+link_3_Z+link_2_Z+link_1_Z}" rpy="0 0 0"/> -->
             <geometry>
-                <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/ee_subsampled.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/extruder.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="abb_orange"/>
         </visual>
@@ -150,7 +151,7 @@
             <origin xyz="
                 -${link_6_X+link_5_X+link_4_X+link_3_X+link_2_X+link_1_X} -${link_6_Y+link_5_Y+link_4_Y+link_3_Y+link_2_Y+link_1_Y} -${link_6_Z+link_5_Z+link_4_Z+link_3_Z+link_2_Z+link_1_Z}" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="package://abb_irb1200_support/meshes/irb1200/collision/ee_subsampled.stl"  scale="0.001 0.001 0.001"/>
+                <mesh filename="package://abb_irb1200_support/meshes/irb1200/collision/extruder_collision.stl"  scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="yellow"/>
         </collision>
@@ -204,6 +205,11 @@
         <parent link="${prefix}link_6"/>
         <child link="${prefix}tool0"/>
         <origin xyz="0 0 0" rpy="0 1.57079632679 0"/>
+    </joint>
+    <joint name="${prefix}joint_6-tool0-extruder" type="fixed">
+        <parent link="${prefix}tool0"/>
+        <child link="${prefix}extruder"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
     <!-- end of joint list -->
 
