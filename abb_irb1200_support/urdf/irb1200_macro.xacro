@@ -136,7 +136,7 @@
         </collision>
     </link>
     <link name="${prefix}tool0"/>
-    <link name="${prefix}extruder">
+    <link name="${prefix}extruder_base">
         <visual>
             <origin xyz="
                 0 0 .00875" rpy="0 3.14159 -1.571"/>
@@ -156,6 +156,7 @@
             <material name="yellow"/>
         </collision>
     </link>
+    <link name="${prefix}extruder_tip"/>
     <!-- end of link list -->
 
     <!-- joint list -->
@@ -206,10 +207,15 @@
         <child link="${prefix}tool0"/>
         <origin xyz="0 0 0" rpy="0 1.57079632679 0"/>
     </joint>
-    <joint name="${prefix}joint_6-tool0-extruder" type="fixed">
+    <joint name="${prefix}tool0-extruder" type="fixed">
         <parent link="${prefix}tool0"/>
-        <child link="${prefix}extruder"/>
+        <child link="${prefix}extruder_base"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+    <joint name="${prefix}extruder_tip" type="fixed">
+        <parent link="${prefix}extruder_base"/>
+        <child link="${prefix}extruder_tip"/>
+        <origin xyz="0 0.0825 0.166525" rpy="0 0 0"/>
     </joint>
     <!-- end of joint list -->
 
