@@ -25,4 +25,9 @@
     <disable_collisions link1="link_4" link2="link_5" reason="Adjacent" />
     <disable_collisions link1="link_4" link2="link_6" reason="Never" />
     <disable_collisions link1="link_5" link2="link_6" reason="Adjacent" />
+    <disable_collisions link1="link_5" link2="extruder_base" reason="Never" />
+    <disable_collisions link1="link_6" link2="extruder_base" reason="Adjacent" />
+    <disable_collisions link1="link_5" link2="extruder_tip" reason="Never" />
+    <disable_collisions link1="link_6" link2="extruder_tip" reason="Never" />
+    <disable_collisions link1="extruder_base" link2="extruder_tip" reason="Adjacent" />
 </robot>
