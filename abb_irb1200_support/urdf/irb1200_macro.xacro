@@ -8,8 +8,11 @@
             <geometry>
                 <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/base_link.stl"/>
             </geometry>
-            <material name="abb_orange">
-                <color rgba="1 0.43 0 1"/>
+            <!-- <material name="abb_orange"> -->
+                <!-- <color rgba="1 0.43 0 1"/> -->
+            <!-- </material> -->
+            <material name="whitesmoke">
+                <color rgba="0.8 0.8 0.8 1"/>
             </material>
         </visual>
         <collision>
@@ -27,7 +30,7 @@
             <geometry>
                 <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_1.stl"/>
             </geometry>
-            <material name="abb_orange"/>
+            <material name="whitesmoke"/>
         </visual>
         <collision>
             <origin xyz="-${link_1_X} -${link_1_Y} -${link_1_Z}" rpy="0 0 0"/>
@@ -46,7 +49,7 @@
             <geometry>
                 <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_2.stl"/>
             </geometry>
-            <material name="abb_orange"/>
+            <material name="whitesmoke"/>
         </visual>
         <collision>
             <origin xyz="
@@ -68,7 +71,7 @@
             <geometry>
                 <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_3.stl"/>
             </geometry>
-            <material name="abb_orange"/>
+            <material name="whitesmoke"/>
         </visual>
         <collision>
             <origin xyz="
@@ -88,7 +91,7 @@
             <geometry>
                 <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_4.stl"/>
             </geometry>
-            <material name="abb_orange"/>
+            <material name="whitesmoke"/>
         </visual>
         <collision>
             <origin xyz="
@@ -106,7 +109,7 @@
             <geometry>
                 <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_5.stl"/>
             </geometry>
-            <material name="abb_orange"/>
+            <material name="whitesmoke"/>
         </visual>
         <collision>
             <origin xyz="
@@ -124,7 +127,7 @@
             <geometry>
                 <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/link_6.stl"/>
             </geometry>
-            <material name="abb_orange"/>
+            <material name="whitesmoke"/>
         </visual>
         <collision>
             <origin xyz="
@@ -145,7 +148,9 @@
             <geometry>
                 <mesh filename="package://abb_irb1200_support/meshes/irb1200/visual/extruder.stl" scale="0.001 0.001 0.001"/>
             </geometry>
-            <material name="abb_orange"/>
+            <material name="silver">
+                <color rgba="0.753 0.753 0.753 1"/>
+            </material>
         </visual>
         <collision>
             <origin xyz="
@@ -226,7 +231,9 @@
             <geometry>
                 <mesh filename="package://abb_irb1200_support/meshes/buildplatform/visual/buildplatform.stl" scale="0.001 0.001 0.001"/>
             </geometry>
-            <material name="abb_orange"/>
+            <material name="">
+                <color rgba="0.475 0.475 0.475 1"/>
+            </material>
         </visual>
         <collision>
             <geometry>
