@@ -238,7 +238,7 @@
     <joint name="platform" type="fixed">
         <parent link="${prefix}base_link"/>
         <child link="build_platform"/>
-        <origin xyz="0.6 0 0" rpy="0 0 0"/>
+        <origin xyz="0.567 0 0" rpy="0 0 0"/>
     </joint>
     <!-- end enviroment list-->
 
