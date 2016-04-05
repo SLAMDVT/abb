@@ -219,6 +219,29 @@
     </joint>
     <!-- end of joint list -->
 
+    <!-- enviroment list-->
+    <link name="build_platform">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://abb_irb1200_support/meshes/buildplatform/visual/buildplatform.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="abb_orange"/>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://abb_irb1200_support/meshes/buildplatform/collision/buildplatform.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="yellow"/>
+        </collision>
+    </link>
+    <joint name="platform" type="fixed">
+        <parent link="${prefix}base_link"/>
+        <child link="build_platform"/>
+        <origin xyz="0.6 0 0" rpy="0 0 0"/>
+    </joint>
+    <!-- end enviroment list-->
+
     <!-- ROS base_link to ABB World Coordinates transform -->
     <link name="${prefix}base" />
     <joint name="${prefix}base_link-base" type="fixed">
