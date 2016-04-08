@@ -191,7 +191,8 @@
         <parent link="${prefix}link_3"/>
         <child link="${prefix}link_4"/>
         <axis xyz="1 0 0"/>
-        <limit lower="-4.71239" upper="4.71239" effort="0" velocity="6.98131"/>
+        <!-- <limit lower="-4.71239" upper="4.71239" effort="0" velocity="6.98131"--> <!-- this is the hard limits -->
+        <limit lower="-1.57079632679" upper="1.57079632679" effort="0" velocity="6.98131"/>
     </joint>
     <joint name="${prefix}joint_5" type="revolute">
         <origin xyz="${link_5_X} ${link_5_Y} ${link_5_Z}" rpy="0 0 0"/>
@@ -205,7 +206,8 @@
         <parent link="${prefix}link_5"/>
         <child link="${prefix}link_6"/>
         <axis xyz="1 0 0"/>
-        <limit lower="-6.2832" upper="6.2832" effort="0" velocity="10.4720"/>
+        <!-- <limit lower="-6.2832" upper="6.2832" effort="0" velocity="10.4720"-->  <!-- this is the hard limits --> 
+        <limit lower="0.78539816339" upper="2.35619449019" effort="0" velocity="10.4720"/>
     </joint>
     <joint name="${prefix}joint_6-tool0" type="fixed">
         <parent link="${prefix}link_6"/>
