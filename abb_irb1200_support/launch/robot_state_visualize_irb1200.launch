@@ -23,5 +23,5 @@
 
   <include file="$(find abb_irb1200_support)/launch/load_irb1200.launch" />
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find abb_irb1200_support)/config/robot_state_visualize.rviz" required="true" />
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find abb_irb1200_support)/config/robot_state_visualize.rviz" required="true" /> -->
 </launch>
